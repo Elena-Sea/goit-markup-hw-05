@@ -104,3 +104,4 @@ dist
 .tern-port
 images/.DS_Store
 images/icons-sprite/.DS_Store
+.DS_Store
