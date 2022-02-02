@@ -5,6 +5,7 @@
 вторичный цвет текста (заголовки) #212121;
 цвет эффектов  #2196F3;
 цвет заливки иконок соцсетей #AFB1B8;
+цвет фон модалки background: rgba(0, 0, 0, 0.2);
  */
 :root {
 	--primary-text-color: #757575;
@@ -15,6 +16,7 @@
 	--conditions-subcolor: #FFFFFF;
 	--social-link-fill: #AFB1B8;
 	--social-link-subfill: #FFFFFF;
+	--modal-background-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -565,7 +567,8 @@ position: relative;
 	display: block;
 }
 
-.product-link:hover {
+.product-link:hover,
+.product-link:focus {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
 
@@ -593,7 +596,41 @@ position: relative;
 	padding: 20px 24px;
 	
 	border-right: 1px solid #EEEEEE;
-	border-left: 1px solid #EEEEEE;
+	border-left: 1px solid #EEEEEE;	
+}
+
+.card-thumb {
+	position: relative;
+}
+
+.product-overflow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 63px 24px;
+	text-align: left;
+	width: 100%;
+	height: 100%;
+
+	font-size: 18px;
+	line-height: 1.56;
+	letter-spacing: 0.03em;
+	color: var(--social-link-subfill);
+
+	background: rgba(33, 150, 243, 0.9);
+	opacity: 0;
+	transform: translateY(100%);
+	z-index: 0;
+}
+
+.product-link:hover .product-overflow,
+.product-link:focus .product-overflow{
+	opacity: 1;
+	transform: translateY(0);
+	
+
+
+	transition: transform 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* footer */
@@ -665,4 +702,57 @@ position: relative;
 .link.social.ft {
 	color: var(--social-link-subfill);
 	background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* Модальное окно */
+
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--modal-background-color);
+}
+
+.modal {
+	position: absolute;
+	width: 528px;
+	height: 581px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+
+	background: #FFFFFF;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+.backdrop.is-hidden {
+	/* opacity: 0; */
+	pointer-events: none;
+	visibility: visible;
+}
+
+.button.close {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 30px;
+	height: 30px;
+	
+	background: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 50%;
+}
+
+.modal-btn-close {
+	/* position: absolute;
+	top: 0;
+	right: 0; */
+
+	width: 18px;
+	height: 18px;
+	fill: #000;
 }
