@@ -52,13 +52,14 @@ p {
 	text-decoration: none;
 	font-style:normal;
 	color: var(--primary-text-color);
+
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
 .link:focus {
 	color: var(--conditions-color);
 
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button {
@@ -69,14 +70,14 @@ p {
 	font-family: inherit;
 	padding: 0;
 	color: var(--secondary-text-color);
+
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
 .button:focus {
 	color: var(--conditions-subcolor);
 	background-color: var(--conditions-color);
-
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title {
@@ -253,15 +254,13 @@ header {
 	color: var(--conditions-subcolor); 
 	background-color: var(--conditions-color);
 	
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.btn-hero:hover,
 .button.btn-hero:focus {
 	background-color: #188CE8;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-
-
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title-hero {
@@ -448,14 +447,14 @@ position: relative;
 	border-radius: 50%;
 
 	color: var(--social-link-fill);
+
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link.social:hover,
 .link.social:focus {
 	background-color: var(--conditions-color);
 	color: var(--social-link-subfill);
-	
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-social {
@@ -493,6 +492,8 @@ position: relative;
 	color: var(--social-link-fill);
 	border: 1px solid #AFB1B8;
 	border-radius: 4px;
+	
+	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link.client-link:hover,
@@ -500,9 +501,6 @@ position: relative;
 	
 	color: var(--conditions-color);
 	border-color: var(--conditions-color);
-
-
-	transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client .icon-client {
@@ -535,14 +533,14 @@ position: relative;
 	font-size: 16px;
 	line-height: 1.63;
 	letter-spacing: 0.03em;
+
+
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-fltr:hover,
 .btn-fltr:focus {
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-
-
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* grid */
@@ -565,6 +563,8 @@ position: relative;
 
 .product-link.link {
 	display: block;
+
+	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-link:hover,
@@ -572,7 +572,6 @@ position: relative;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
 
-	transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-link:hover .product-item-type{
@@ -601,6 +600,8 @@ position: relative;
 
 .card-thumb {
 	position: relative;
+	overflow: hidden;
+
 }
 
 .product-overflow {
@@ -618,19 +619,14 @@ position: relative;
 	color: var(--social-link-subfill);
 
 	background: rgba(33, 150, 243, 0.9);
-	opacity: 0;
 	transform: translateY(100%);
-	z-index: 0;
+
+	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-link:hover .product-overflow,
 .product-link:focus .product-overflow{
-	opacity: 1;
 	transform: translateY(0);
-	
-
-
-	transition: transform 2500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* footer */
@@ -715,44 +711,47 @@ position: relative;
 	height: 100%;
 
 	background-color: var(--modal-background-color);
+
+	opacity: 1;
+	transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden .modal {
+	transform: translate(-50%, -50%) scale(0.5);
 }
 
 .modal {
 	position: absolute;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	padding: 8px;
 	width: 528px;
 	height: 581px;
 	left: 50%;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(1);
 
 	background: #FFFFFF;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
 }
 
+
 .backdrop.is-hidden {
-	/* opacity: 0; */
+	opacity: 0;
 	pointer-events: none;
-	visibility: visible;
+
 }
 
 .button.close {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 	width: 30px;
 	height: 30px;
+	padding: 0;
 	
 	background: #FFFFFF;
 	border: 1px solid rgba(0, 0, 0, 0.1);border-radius: 50%;
-}
-
-.modal-btn-close {
-	/* position: absolute;
-	top: 0;
-	right: 0; */
-
-	width: 18px;
-	height: 18px;
-	fill: #000;
 }
