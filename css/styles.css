@@ -53,12 +53,7 @@ p {
 	font-style:normal;
 	color: var(--primary-text-color);
 }
-	
 
-.link:hover,
-.link:focus {
-	color: var(--conditions-color);
-}
 
 .button {
 	display: inline-block;
@@ -153,6 +148,12 @@ header {
 	color: var(--conditions-color);
 }
 
+
+.site-nav-item.link:hover,
+.site-nav-item.link:focus {
+	color: var(--conditions-color);
+}
+
 .nav-studio {
 	position: relative;
 }
@@ -207,6 +208,13 @@ header {
 .link.tel {
 	display: flex;
 	align-items: center;
+}
+
+.link.mail:hover,
+.link.tel:hover,
+.link.mail:focus,
+.link.tel:focus{
+	color: var(--conditions-color);
 }
 
 .icon-envelope,
@@ -569,10 +577,6 @@ position: relative;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 
 
-}
-
-.product-link:hover .product-item-type{
-	color: var(--primary-text-color);
 }
 
 .product-item-name {
