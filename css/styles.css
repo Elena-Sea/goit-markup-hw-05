@@ -52,14 +52,12 @@ p {
 	text-decoration: none;
 	font-style:normal;
 	color: var(--primary-text-color);
-
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+	
 
 .link:hover,
 .link:focus {
 	color: var(--conditions-color);
-
 }
 
 .button {
@@ -70,8 +68,6 @@ p {
 	font-family: inherit;
 	padding: 0;
 	color: var(--secondary-text-color);
-
-	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -254,7 +250,7 @@ header {
 	color: var(--conditions-subcolor); 
 	background-color: var(--conditions-color);
 	
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.btn-hero:hover,
@@ -371,10 +367,12 @@ position: relative;
 .occup-description {
 	position: absolute;
 	bottom: 0;
-
 	width:100%;
-	padding-top: 27px;
-	padding-bottom: 27px;
+	min-height: 70px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	font-weight: bold;
 	font-size: 14px;
@@ -431,7 +429,6 @@ position: relative;
 
 .social-link {
 	display: flex;
-	
 }
 
 .social-link:not(:last-child) {
@@ -619,7 +616,7 @@ position: relative;
 	color: var(--social-link-subfill);
 
 	background: rgba(33, 150, 243, 0.9);
-	transform: translateY(100%);
+	transform: translateY(101%);
 
 	transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
